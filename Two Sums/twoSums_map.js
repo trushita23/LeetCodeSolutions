@@ -1,3 +1,9 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
 var twoSum = function(nums, target) {
  const len = nums.length;
     let indexes = [];
@@ -6,10 +12,11 @@ var twoSum = function(nums, target) {
         numMap.set(nums[i],i);
     }
     for(let i=0;i<len;i++){
-        if(numMap.get(target-nums[i]) && numMap.get(target-nums[i])!=i)
+        let numIndex =numMap.get(target-nums[i]);
+        if(numIndex && numIndex !=i)
         {
             indexes[0]=i;
-            indexes[1]=numMap.get(target-nums[i]);
+            indexes[1]=numIndex;
             break;
         }
     }
